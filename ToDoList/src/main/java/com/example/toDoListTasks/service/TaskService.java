@@ -35,7 +35,7 @@ public class TaskService {
 		return taskDTOs;
 	}
 	
-	public TaskDTO readById(Integer id) {
+	public TaskDTO readTaskById(Integer id) {
 		Optional<Task> task = taskRepository.findById(id);
 		
 		if(task.isPresent()) {
