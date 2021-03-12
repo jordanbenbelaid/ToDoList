@@ -44,7 +44,7 @@ public class TaskController {
 	//Getting a specific duck
 	@GetMapping("/{id}")
 	public ResponseEntity<TaskDTO> getTaskById(@PathVariable("id") int id) {
-		TaskDTO task = taskService.readById(id);
+		TaskDTO task = taskService.readTaskById(id);
 		return new ResponseEntity<TaskDTO>(task, HttpStatus.OK);
 	}
 	

@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 import com.example.toDoListTasks.data.model.Urgency;
 import com.example.toDoListTasks.data.repository.UrgencyRepository;
 import com.example.toDoListTasks.dto.UrgencyDTO;
-import com.example.toDoListTasks.exceptions.TaskNotFoundException;
+import com.example.toDoListTasks.exceptions.UrgencyNotFoundException;
 import com.example.toDoListTasks.mappers.UrgencyMapper;
 
 @Service
@@ -28,7 +28,7 @@ public class UrgencyService {
 	}
 	
 	@Transactional
-	public List<UrgencyDTO> readAllPonds(){
+	public List<UrgencyDTO> readAllUrgency(){
 		List<Urgency> urgencyInDb = urgencyRepository.findAll();
 		List<UrgencyDTO> urgencyReturns = new ArrayList<UrgencyDTO>();
 		
@@ -47,12 +47,12 @@ public class UrgencyService {
 	
 	public UrgencyDTO updateUrgency(Integer id, Urgency urgency) {
 		if(!urgencyRepository.existsById(id)) {
-			throw new TaskNotFoundException();
+			throw new UrgencyNotFoundException();
 		}
 		
 		Optional<Urgency> urgencyOpt = urgencyRepository.findById(id);
 		Urgency urgencyInDb = urgencyOpt.orElseThrow(() -> {
-			throw new TaskNotFoundException();		
+			throw new UrgencyNotFoundException();		
 		});
 		
 		urgencyInDb.setName(urgency.getName());
@@ -64,7 +64,7 @@ public class UrgencyService {
 		if(urgencyRepository.existsById(id)) {
 			urgencyRepository.deleteById(id);
 		} else {
-			throw new TaskNotFoundException();
+			throw new UrgencyNotFoundException();
 		}
 		
 		boolean doesItExistStill = urgencyRepository.existsById(id);
