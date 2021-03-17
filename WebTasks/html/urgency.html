@@ -25,7 +25,75 @@
       </ul>
     </nav>
 
+    <h1 class="big-header">How do you want to use the Urgencies?</h1>
+    <p class="text">
+        Use the buttons below to help you choose what you want to do!
+    </p>
 
+    <div class="card">
+        <div class="card-body">
+            <div class="get">
+                <h3 class="headers">Get Urgencies</h3>
+                <button type="button" class="btn btn-outline-light" onclick="getUrgency()">
+                    Show all urgencies
+                </button>
+
+                <div class="card" style="margin: 2vw 2vh;">
+                    <div class="card-body">
+                        <p class="getData">
+
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <div class="post">
+                <h3 class="headers">Create an Urgency</h3>
+
+                <form>
+                    <div class="mb-3">
+                        <label for="urgencyname" class="form-label" style="color: white;">Urgency name</label>
+                        <input type="text" class="form-control" name="urgencyname" id="urgencyname" />
+                    </div>
+                </form>
+
+                    <button type="submit" class="btn btn-outline-light" onclick="">
+                        Create a new Urgency
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <div class="update">
+                <h3 class="headers">Update an Urgency</h3>
+                <button type="button" class="btn btn-outline-light" onclick="">
+                    Update an Urgency
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <div class="delete">
+                <h3 class="headers">Delete an Urgency</h3>
+                <button type="button" class="btn btn-outline-light" onclick="">
+                    Delete an Urgency
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="/js/urgency.js"></script>
 
 
 
