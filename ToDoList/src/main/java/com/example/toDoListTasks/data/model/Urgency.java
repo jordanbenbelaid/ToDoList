@@ -27,8 +27,8 @@ public class Urgency {
 	
 	@Column(name = "name", unique = true)
 	private String name;
-	
-	@JsonIgnore
+
+//	@JsonIgnore
 	@OneToMany(mappedBy = "urgency", fetch = FetchType.LAZY, orphanRemoval = true)
 	@OnDelete(action = OnDeleteAction.CASCADE)
 	private List<Task> tasks;
@@ -71,6 +71,7 @@ public class Urgency {
 
 	public void setTasks(List<Task> tasks) {
 		this.tasks = tasks;
+//		tasks.forEach(t -> t.setUrgency(this));
 	}
 
 	@Override

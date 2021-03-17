@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Scope;
 public class ApplicationConfiguration {
 	
 	@Bean
-	@Scope
+	@Scope("prototype")
 	public ModelMapper modelMapper() {
 		ModelMapper modelMapper = new ModelMapper();
 		modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);

@@ -22,7 +22,7 @@ import com.example.toDoListTasks.dto.UrgencyDTO;
 import com.example.toDoListTasks.service.UrgencyService;
 
 @RestController
-@RequestMapping("/bond")
+@RequestMapping("/urgency")
 public class UrgencyController {
 
 	private UrgencyService urgencyService;

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
@@ -21,7 +22,7 @@ import com.example.toDoListTasks.service.TaskService;
 
 @RestController
 @RequestMapping(path = "/task")
-//@CrossOrigin
+@CrossOrigin
 public class TaskController {
 
 	private TaskService taskService;
@@ -31,7 +32,7 @@ public class TaskController {
 		this.taskService = taskService;
 	}
 	
-	//Getting all ducks
+	//Getting all tasks
 	@GetMapping
 	public ResponseEntity<List<TaskDTO>> getAllTasks(){
 		HttpHeaders httpHeaders = new HttpHeaders();
@@ -41,7 +42,7 @@ public class TaskController {
 		return new ResponseEntity<List<TaskDTO>>(data, httpHeaders, HttpStatus.OK);
 	}
 	
-	//Getting a specific duck
+	//Getting a specific task
 	@GetMapping("/{id}")
 	public ResponseEntity<TaskDTO> getTaskById(@PathVariable("id") int id) {
 		TaskDTO task = taskService.readTaskById(id);
