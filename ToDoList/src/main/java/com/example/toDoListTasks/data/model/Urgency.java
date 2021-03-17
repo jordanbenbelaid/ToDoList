@@ -29,10 +29,10 @@ public class Urgency {
 	private String name;
 
 //	@JsonIgnore
-	@OneToMany(mappedBy = "urgency", fetch = FetchType.LAZY, orphanRemoval = true)
+	@OneToMany(mappedBy = "urgency", fetch = FetchType.LAZY)
 	@OnDelete(action = OnDeleteAction.CASCADE)
 	private List<Task> tasks;
-	
+//	, orphanRemoval = true
 	
 	public Urgency() {
 		

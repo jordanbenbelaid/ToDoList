@@ -54,16 +54,16 @@
         <div class="card-body">
             <div class="post">
                 <h3 class="headers">Create a Task</h3>
-
-                <form>
+<!-- 
+                <form method="POST"> -->
                     <div class="mb-3">
                         <label for="taskname" class="form-label" style="color: white;">Task name</label>
-                        <input type="text" class="form-control" name="taskname" id="taskname" />
+                        <input type="text" class="form-control" name="taskname" id="taskname"/>
                     </div>
                     <div class="mb-3">
                         <label for="length" class="form-label" style="color: white;">How long will the task
                             take?</label>
-                        <input type="number" class="form-control" name="length" id="length" />
+                        <input type="number" class="form-control" name="length" id="length"/>
                         <div id="emailHelp" class="form-text">
                             This refers to how long the task takes to complete in hours
                             (roughly)
@@ -88,17 +88,17 @@
                         <label class="form-label" for="urgency" style="color: white;">Select how urgent this task
                             is</label>
                         <select class="form-control" id="urgency" name="urgency">
-                            <option value="Not-Urgent">Not Urgent</option>
-                            <option value="Fairly-Urgent">Fairly Urgent</option>
-                            <option value="Urgent">Urgent</option>
-                            <option value="Very-Urgent">Very Urgent</option>
+                            <option value="1">Not Urgent</option>
+                            <option value="2">Fairly Urgent</option>
+                            <option value="3">Urgent</option>
+                            <option value="4">Very Urgent</option>
                         </select>
                     </div>
 
-                    <button type="submit" class="btn btn-outline-light" onclick="">
+                    <button type="submit" class="btn btn-outline-light" id="newTask" onclick="postRequest()">
                         Create a new task
                     </button>
-                </form>
+                <!-- </form> -->
             </div>
         </div>
     </div>

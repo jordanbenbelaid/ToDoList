@@ -19,3 +19,41 @@ fetch("http://localhost:8080/task").then(response => {
         }).catch(err => console.log("You have an error" + err));
 })
 }
+
+const postRequest = () => {
+    let taskname = document.querySelector("#taskname").value
+    console.log(taskname);
+
+    let length = document.querySelector("#length").value;
+    console.log(length);
+
+    let difficulty = document.querySelector("#difficulty").value;
+    console.log(difficulty);
+
+    let description = document.querySelector("#description").value;
+    console.log(description);
+
+    let urgency = document.querySelector("#urgency").value;
+    console.log(urgency);
+
+    fetch("http://localhost:8080/task", {
+    method: "POST",
+    headers: {
+        "Content-type": "application/json"
+    },
+    body: JSON.stringify({
+        "name": taskname,
+        "length": length,
+        "difficulty": difficulty,
+        "description": description,
+        // "urgency":
+        //     {
+        //         "name": urgency
+        // }
+    })
+})
+    .then(res => res.json())
+    .then(data => console.log(data))
+    .catch(err => console.error(err))
+
+}
