@@ -1,13 +1,32 @@
 `use strict`
 
+// function buttonExpand(){
+//     var button = document.getElementById("openDelete");
+//     var field = document.getElementById("deleteFunction");
+
+//     console.log("This is not working");
+//     console.log(field);
+//     console.log(button);
+
+//     if(button.onclick == true){
+//         field.style.display = "block";
+//     } else {
+//         field.style.display = "none";
+//     }
+// }
+
 function expandCheckbox(){
     var checkBox = document.getElementById("check");
-    var fields = document.getElementById("hiddendata");
+    var fields = document.getElementById("hiddenStuff");
+
+    console.log("This is not working");
+    console.log(fields);
+    console.log(checkBox);
 
     if(checkBox.checked == true){
-        Text.style.display = "block";
+        fields.style.display = "block";
     } else {
-        Text.style,display = "none";
+        fields.style.display = "none";
     }
 }
 
@@ -52,7 +71,7 @@ const postRequest = () => {
     let description = document.querySelector("#description").value;
     console.log(description);
 
-    let urgency = document.querySelector("#urgency").value;
+    let urgency = document.querySelector("#idcheck").value;
     console.log(urgency);
 
     const obj =
@@ -63,8 +82,7 @@ const postRequest = () => {
         "description": description,
         "urgency":
         {
-            "id": urgency,
-            "name": urgency
+            "id": urgency
         }
     }
 
@@ -78,4 +96,25 @@ const postRequest = () => {
     .then(res => res.json())
     .then(data => console.log(data))
     .catch(err => console.err(err))
+}
+
+const updateRequest = () => {
+
+}
+
+const deleteRequest = () => {
+
+    let id = document.querySelector("#delIdCheck").value;
+
+
+    fetch("http://localhost:8080/task/" + id, {
+        method: 'DELETE',
+        headers: {
+            "Content-type": "application/json"
+        },
+      }).then(response =>
+        response.json().then(json => {
+          return json;
+        })
+      );
 }

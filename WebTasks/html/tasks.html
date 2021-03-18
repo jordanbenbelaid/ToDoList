@@ -90,23 +90,17 @@
                     </div>
 
                     <div class="mb-3">
-                        <label id="check" class="form-label" for="urgency" style="color: white;">Would you like to add the task to a task list with how urgent it is?</label>
+                        <label class="form-label" for="urgency" style="color: white;">Would you like to add the task to a task list with how urgent the task is?</label>
                             <input type="checkbox" name="urgency" id="check" onclick="expandCheckbox()"/>
                     </div>
                     
-                    <div class="mb-3">
+                    <div class="mb-3" id="hiddenStuff">
                         <label id="hiddendata" class="form-label" for="listid">Enter a list ID</label>
                             <input type="number" class="form-control" name="idcheck" id="idcheck">
 
-                            <label id="hiddendata" class="form-label" for="listid">Enter a list name (optional)</label>
-                            <input type="text" class="form-control" name="idcheck" id="idcheck">
+                            <!-- <label id="hiddendata" class="form-label" for="listid">Enter a list name (optional)</label>
+                            <input type="text" class="form-control" name="idcheck" id="idcheck"> -->
                     </div>
-                        
-
-
-
-
-
 
                     <button type="submit" class="btn btn-outline-light" id="newTask" onclick="postRequest()">
                         Create a new task
@@ -131,9 +125,15 @@
         <div class="card-body">
             <div class="delete">
                 <h3 class="headers">Delete a Task</h3>
-                <button type="button" class="btn btn-outline-light" onclick="">
+
+                <div class="mb-3" id="deleteFunction">
+                    <label id="delData" class="form-label" for="delData">Enter a list ID</label>
+                    <input type="number" class="form-control" name="delIdCheck" id="delIdCheck">
+                </div>
+
+                <button type="button" class="btn btn-outline-light" onclick="deleteRequest()">
                     Delete a task
-                </button>
+            </button>
             </div>
         </div>
     </div>
