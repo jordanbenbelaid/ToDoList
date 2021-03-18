@@ -46,7 +46,7 @@ public class UrgencyController {
 		UrgencyDTO newUrgency = urgencyService.createUrgency(urgency);
 
 		HttpHeaders headers = new HttpHeaders();
-		headers.add("Location", String.valueOf(newUrgency.getName()));
+		headers.add("Location", String.valueOf(newUrgency.getId()));
 
 		return new ResponseEntity<UrgencyDTO>(newUrgency, headers, HttpStatus.CREATED);
 	}

@@ -18,10 +18,10 @@
                 <a class="nav-link" href="home.html">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="tasks.html">Task List</a>
+                <a class="nav-link active" aria-current="page" href="tasks.html">Tasks</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="urgency.html">Urgency List</a>
+                <a class="nav-link" href="urgency.html">Task List</a>
             </li>
         </ul>
     </nav>
@@ -54,8 +54,12 @@
         <div class="card-body">
             <div class="post">
                 <h3 class="headers">Create a Task</h3>
-<!-- 
-                <form method="POST"> -->
+                <p class="text">
+                    NOTE: Please use an existing Task List (You can check which task lists you have created on the 
+                    task list page)
+                </p>
+
+                <!-- <form> -->
                     <div class="mb-3">
                         <label for="taskname" class="form-label" style="color: white;">Task name</label>
                         <input type="text" class="form-control" name="taskname" id="taskname"/>
@@ -84,16 +88,25 @@
                         <label for="description" class="form-label" style="color: white;">Description of task</label>
                         <textarea class="form-control" id="description" rows="2"></textarea>
                     </div>
+
                     <div class="mb-3">
-                        <label class="form-label" for="urgency" style="color: white;">Select how urgent this task
-                            is</label>
-                        <select class="form-control" id="urgency" name="urgency">
-                            <option value="1">Not Urgent</option>
-                            <option value="2">Fairly Urgent</option>
-                            <option value="3">Urgent</option>
-                            <option value="4">Very Urgent</option>
-                        </select>
+                        <label id="check" class="form-label" for="urgency" style="color: white;">Would you like to add the task to a task list with how urgent it is?</label>
+                            <input type="checkbox" name="urgency" id="check" onclick="expandCheckbox()"/>
                     </div>
+                    
+                    <div class="mb-3">
+                        <label id="hiddendata" class="form-label" for="listid">Enter a list ID</label>
+                            <input type="number" class="form-control" name="idcheck" id="idcheck">
+
+                            <label id="hiddendata" class="form-label" for="listid">Enter a list name (optional)</label>
+                            <input type="text" class="form-control" name="idcheck" id="idcheck">
+                    </div>
+                        
+
+
+
+
+
 
                     <button type="submit" class="btn btn-outline-light" id="newTask" onclick="postRequest()">
                         Create a new task

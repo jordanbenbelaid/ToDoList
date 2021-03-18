@@ -17,15 +17,15 @@
           <a class="nav-link" href="home.html">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="tasks.html">Task List</a>
+          <a class="nav-link" href="tasks.html">Tasks</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="urgency.html">Urgency List</a>
+          <a class="nav-link active" aria-current="page" href="urgency.html">Task List</a>
         </li>
       </ul>
     </nav>
 
-    <h1 class="big-header">How do you want to use the Urgencies?</h1>
+    <h1 class="big-header">How do you want to use the Task Lists?</h1>
     <p class="text">
         Use the buttons below to help you choose what you want to do!
     </p>
@@ -33,9 +33,9 @@
     <div class="card">
         <div class="card-body">
             <div class="get">
-                <h3 class="headers">Get Urgencies</h3>
+                <h3 class="headers">Get Task Lists</h3>
                 <button type="button" class="btn btn-outline-light" onclick="getUrgency()">
-                    Show all urgencies
+                    Show all lists
                 </button>
 
                 <div class="card" style="margin: 2vw 2vh;">
@@ -53,17 +53,17 @@
     <div class="card">
         <div class="card-body">
             <div class="post">
-                <h3 class="headers">Create an Urgency</h3>
+                <h3 class="headers">Create a Task List</h3>
 
                 <form>
                     <div class="mb-3">
-                        <label for="urgencyname" class="form-label" style="color: white;">Urgency name</label>
+                        <label for="urgencyname" class="form-label" style="color: white;">Task list name</label>
                         <input type="text" class="form-control" name="urgencyname" id="urgencyname" />
                     </div>
                 </form>
 
-                    <button type="submit" class="btn btn-outline-light" onclick="">
-                        Create a new Urgency
+                    <button type="submit" class="btn btn-outline-light" id="newUrgency" onclick="postUrgency()">
+                        Create a new Task list
                     </button>
                 </form>
             </div>
@@ -73,9 +73,9 @@
     <div class="card">
         <div class="card-body">
             <div class="update">
-                <h3 class="headers">Update an Urgency</h3>
+                <h3 class="headers">Update a Task List</h3>
                 <button type="button" class="btn btn-outline-light" onclick="">
-                    Update an Urgency
+                    Update a Task List
                 </button>
             </div>
         </div>
@@ -84,9 +84,9 @@
     <div class="card">
         <div class="card-body">
             <div class="delete">
-                <h3 class="headers">Delete an Urgency</h3>
+                <h3 class="headers">Delete a Task List</h3>
                 <button type="button" class="btn btn-outline-light" onclick="">
-                    Delete an Urgency
+                    Delete a Task List
                 </button>
             </div>
         </div>

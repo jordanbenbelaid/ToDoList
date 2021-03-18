@@ -11,7 +11,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.hibernate.annotations.CascadeType;
 
 @Entity
 @Table(name = "task")
@@ -34,7 +34,7 @@ public class Task {
 	private String description;
 	
 //	@JsonIgnore
-	@ManyToOne(targetEntity = Urgency.class, fetch = FetchType.EAGER)
+	@ManyToOne(targetEntity = Urgency.class, fetch = FetchType.LAZY)
 	@JoinColumn(name = "fk_urgency_id")
 	private Urgency urgency;
 	
