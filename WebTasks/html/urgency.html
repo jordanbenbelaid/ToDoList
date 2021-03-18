@@ -85,9 +85,16 @@
         <div class="card-body">
             <div class="delete">
                 <h3 class="headers">Delete a Task List</h3>
-                <button type="button" class="btn btn-outline-light" onclick="">
+
+                <div class="mb-3">
+                    <label for="tList" class="form-label" style="color: white;">Task list name</label>
+                    <input type="number" class="form-control" name="deleteList" id="deleteList" />
+                </div>
+
+                <button type="button" class="btn btn-outline-light" onclick="deleteUrgency()">
                     Delete a Task List
                 </button>
+
             </div>
         </div>
     </div>

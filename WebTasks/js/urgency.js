@@ -60,10 +60,12 @@ const updateUrgency = () => {
 
 const deleteUrgency = () => {
 
-    fetch("http://localhost:8080/urgency/?", {
-        method:"DELETE",
-        headers: {
-            "Content-type": "application/json"
-        },
-    })
+    let id = document.querySelector("#deleteList").value;
+
+    fetch("http://localhost:8080/urgency/delete/" + id, {
+        method: 'DELETE'
+      })
+      .then(response =>response.json()
+        .then(json => {return json;})
+      );
 }

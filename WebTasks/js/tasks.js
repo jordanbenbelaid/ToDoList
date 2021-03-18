@@ -100,21 +100,21 @@ const postRequest = () => {
 
 const updateRequest = () => {
 
+    let id = document.querySelector("").value;
+
+    fetch("http://localhost:8080/task/update/" + id, {
+        method: 'UPDATE'
+      })
 }
 
 const deleteRequest = () => {
 
     let id = document.querySelector("#delIdCheck").value;
 
-
-    fetch("http://localhost:8080/task/" + id, {
-        method: 'DELETE',
-        headers: {
-            "Content-type": "application/json"
-        },
-      }).then(response =>
-        response.json().then(json => {
-          return json;
-        })
+    fetch("http://localhost:8080/task/delete/" + id, {
+        method: 'DELETE'
+      })
+      .then(response =>response.json()
+        .then(json => {return json;})
       );
 }

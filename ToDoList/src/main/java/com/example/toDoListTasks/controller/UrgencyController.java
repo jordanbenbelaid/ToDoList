@@ -51,7 +51,7 @@ public class UrgencyController {
 		return new ResponseEntity<UrgencyDTO>(newUrgency, headers, HttpStatus.CREATED);
 	}
 
-	@PutMapping("/{id}")
+	@PutMapping("/update/{id}")
 	public ResponseEntity<UrgencyDTO> updateUrgency(@PathVariable("id") Integer id, @RequestBody Urgency urgency) {
 		UrgencyDTO updatedUrgency = urgencyService.updateUrgency(id, urgency);
 
@@ -61,7 +61,7 @@ public class UrgencyController {
 		return new ResponseEntity<UrgencyDTO>(updatedUrgency, headers, HttpStatus.OK);
 	}
 	
-	@DeleteMapping("/{id}")
+	@DeleteMapping("/delete/{id}")
 	public ResponseEntity<Boolean> deleteUrgency(@PathVariable("id") int id) {		
 		return new ResponseEntity<Boolean>(urgencyService.deleteUrgency(id), HttpStatus.OK);
 	}
