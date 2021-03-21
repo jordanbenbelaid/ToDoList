@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,7 +23,8 @@ import com.example.toDoListTasks.dto.UrgencyDTO;
 import com.example.toDoListTasks.service.UrgencyService;
 
 @RestController
-@RequestMapping("/bond")
+@RequestMapping("/urgency")
+@CrossOrigin
 public class UrgencyController {
 
 	private UrgencyService urgencyService;
@@ -44,12 +46,12 @@ public class UrgencyController {
 		UrgencyDTO newUrgency = urgencyService.createUrgency(urgency);
 
 		HttpHeaders headers = new HttpHeaders();
-		headers.add("Location", String.valueOf(newUrgency.getName()));
+		headers.add("Location", String.valueOf(newUrgency.getId()));
 
 		return new ResponseEntity<UrgencyDTO>(newUrgency, headers, HttpStatus.CREATED);
 	}
 
-	@PutMapping("/{id}")
+	@PutMapping("/update/{id}")
 	public ResponseEntity<UrgencyDTO> updateUrgency(@PathVariable("id") Integer id, @RequestBody Urgency urgency) {
 		UrgencyDTO updatedUrgency = urgencyService.updateUrgency(id, urgency);
 
@@ -59,7 +61,7 @@ public class UrgencyController {
 		return new ResponseEntity<UrgencyDTO>(updatedUrgency, headers, HttpStatus.OK);
 	}
 	
-	@DeleteMapping("/{id}")
+	@DeleteMapping("/delete/{id}")
 	public ResponseEntity<Boolean> deleteUrgency(@PathVariable("id") int id) {		
 		return new ResponseEntity<Boolean>(urgencyService.deleteUrgency(id), HttpStatus.OK);
 	}

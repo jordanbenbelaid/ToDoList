@@ -11,6 +11,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.annotations.CascadeType;
+
 @Entity
 @Table(name = "task")
 public class Task {
@@ -31,7 +33,8 @@ public class Task {
 	@NotNull
 	private String description;
 	
-	@ManyToOne(targetEntity = Urgency.class, fetch = FetchType.EAGER)
+//	@JsonIgnore
+	@ManyToOne(targetEntity = Urgency.class, fetch = FetchType.LAZY)
 	@JoinColumn(name = "fk_urgency_id")
 	private Urgency urgency;
 	
@@ -90,7 +93,7 @@ public class Task {
 	public void setDifficulty(String difficulty) {
 		this.difficulty = difficulty;
 	}
-
+	
 
 	public String getLength() {
 		return length;
@@ -138,7 +141,6 @@ public class Task {
 		int result = 1;
 		result = prime * result + ((description == null) ? 0 : description.hashCode());
 		result = prime * result + ((difficulty == null) ? 0 : difficulty.hashCode());
-		result = prime * result + id;
 		result = prime * result + ((length == null) ? 0 : length.hashCode());
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		result = prime * result + ((urgency == null) ? 0 : urgency.hashCode());
@@ -155,29 +157,27 @@ public class Task {
 		if (getClass() != obj.getClass())
 			return false;
 		Task other = (Task) obj;
-		if (description == null) {
+		if (getDescription() == null) {
 			if (other.description != null)
 				return false;
 		} else if (!description.equals(other.description))
 			return false;
-		if (difficulty == null) {
+		if (getDifficulty() == null) {
 			if (other.difficulty != null)
 				return false;
 		} else if (!difficulty.equals(other.difficulty))
 			return false;
-		if (id != other.id)
-			return false;
-		if (length == null) {
+		if (getLength() == null) {
 			if (other.length != null)
 				return false;
 		} else if (!length.equals(other.length))
 			return false;
-		if (name == null) {
+		if (getName() == null) {
 			if (other.name != null)
 				return false;
 		} else if (!name.equals(other.name))
 			return false;
-		if (urgency == null) {
+		if (getUrgency() == null) {
 			if (other.urgency != null)
 				return false;
 		} else if (!urgency.equals(other.urgency))
