@@ -1,4 +1,4 @@
-package dto;
+package com.example.toDoListTasks.dto;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;

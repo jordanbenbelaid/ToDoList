@@ -1,4 +1,4 @@
-package service;
+package com.example.toDoListTasks.service;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.times;

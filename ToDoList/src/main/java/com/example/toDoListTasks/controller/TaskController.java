@@ -36,6 +36,7 @@ public class TaskController {
 	@GetMapping
 	public ResponseEntity<List<TaskDTO>> getAllTasks(){
 		HttpHeaders httpHeaders = new HttpHeaders();
+		//should be an ID
 		httpHeaders.add("Location", "http://localhost:8080/task/all");
 		
 		List<TaskDTO> data = taskService.readAllTasks();
@@ -67,7 +68,7 @@ public class TaskController {
 		HttpHeaders headers = new HttpHeaders();
 		headers.add("Location", String.valueOf(updateTask.getId()));
 		
-		return new ResponseEntity<TaskDTO>(updateTask, HttpStatus.OK);
+		return new ResponseEntity<TaskDTO>(updateTask, headers, HttpStatus.OK);
 	}
 	
 	@DeleteMapping("/delete/{id}")

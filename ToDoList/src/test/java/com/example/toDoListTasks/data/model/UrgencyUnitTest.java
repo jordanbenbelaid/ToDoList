@@ -1,4 +1,4 @@
-package data.model;
+package com.example.toDoListTasks.data.model;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
