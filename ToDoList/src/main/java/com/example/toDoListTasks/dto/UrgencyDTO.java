@@ -12,6 +12,11 @@ public class UrgencyDTO {
 		
 	}
 	
+	public UrgencyDTO(int id, String name) {
+		super();
+		this.id = id;
+		this.name = name;
+	}
 	
 	public UrgencyDTO(int id, String name, List<TaskDTO> tasks) {
 		super();
