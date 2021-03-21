@@ -45,11 +45,7 @@ public class UrgencyService {
 		return urgencyMapper.mapToUrgencyDTO(savedUrgency);
 	}
 	
-	public UrgencyDTO updateUrgency(Integer id, Urgency urgency) {
-		if(!urgencyRepository.existsById(id)) {
-			throw new UrgencyNotFoundException();
-		}
-		
+	public UrgencyDTO updateUrgency(Integer id, Urgency urgency) {		
 		Optional<Urgency> urgencyOpt = urgencyRepository.findById(id);
 		Urgency urgencyInDb = urgencyOpt.orElseThrow(() -> {
 			throw new UrgencyNotFoundException();		

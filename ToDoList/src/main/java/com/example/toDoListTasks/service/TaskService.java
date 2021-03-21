@@ -35,15 +35,15 @@ public class TaskService {
 		return taskDTOs;
 	}
 	
-	public TaskDTO readTaskById(Integer id) {
-		Optional<Task> task = taskRepository.findById(id);
-		
-		if(task.isPresent()) {
-			return taskMapper.mapToTaskDTO(task.get());		
-		} else {
-			throw new TaskNotFoundException();
-		}
-	}
+//	public TaskDTO readTaskById(Integer id) {
+//		Optional<Task> task = taskRepository.findById(id);
+//		
+//		if(task.isPresent()) {
+//			return taskMapper.mapToTaskDTO(task.get());		
+//		} else {
+//			throw new TaskNotFoundException();
+//		}
+//	}
 	
 	public TaskDTO createTask(Task task) {
 		Task newTask = taskRepository.save(task);

@@ -42,12 +42,12 @@ public class TaskController {
 		return new ResponseEntity<List<TaskDTO>>(data, httpHeaders, HttpStatus.OK);
 	}
 	
-	//Getting a specific task
-	@GetMapping("/{id}")
-	public ResponseEntity<TaskDTO> getTaskById(@PathVariable("id") int id) {
-		TaskDTO task = taskService.readTaskById(id);
-		return new ResponseEntity<TaskDTO>(task, HttpStatus.OK);
-	}
+//	//Getting a specific task
+//	@GetMapping("/{id}")
+//	public ResponseEntity<TaskDTO> getTaskById(@PathVariable("id") int id) {
+//		TaskDTO task = taskService.readTaskById(id);
+//		return new ResponseEntity<TaskDTO>(task, HttpStatus.OK);
+//	}
 	
 	@PostMapping
 	public ResponseEntity<TaskDTO> createTask(@RequestBody Task task){
