@@ -1,6 +1,14 @@
 body{
     background-color: black;
 }
+#hiddenData{
+    display: none;
+}
+
+#hide{
+    color: white;
+    display: none;
+}
 
 #hiddenStuff{
     color: white;

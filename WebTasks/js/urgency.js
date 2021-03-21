@@ -28,8 +28,6 @@ const getUrgency = () => {
     })
 }
 
-
-
 const postUrgency = () => {
 
     let name = document.querySelector("#urgencyname").value;
@@ -56,11 +54,25 @@ const postUrgency = () => {
 
 const updateUrgency = () => {
 
-    let id = document.querySelector("#deleteList").value;
+    let id = document.querySelector("#updateList").value;
+
+    let name = document.querySelector("#listName").value;
+
+    const myObj =
+    {
+        "name": name
+    }
 
     fetch("http://localhost:8080/urgency/update/" + id, {
-        method: 'UPDATE'
+        method: 'PUT',
+        headers: {
+            "Content-type": "application/json"
+        },
+        body:JSON.stringify(myObj)
     })
+    .then(res => res.json())
+    .then(data => console.log(data))
+    .catch(err => console.error(err))
 }
 
 const deleteUrgency = () => {
