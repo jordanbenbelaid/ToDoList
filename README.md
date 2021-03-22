@@ -11,10 +11,11 @@ See deployment for notes on how to deploy the project on a live system.
 
 ### Prerequisites
 ## BackEnd
-Java Eclipse IDE
-Maven
-Spring Boot
-Selenium
+
+Java Eclipse IDE,
+Maven,
+Spring Boot,
+Selenium,
 SonarQube
 
 ## Front-end
