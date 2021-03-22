@@ -10,14 +10,14 @@ These instructions will get you a copy of the project up and running on your loc
 See deployment for notes on how to deploy the project on a live system.
 
 ### Prerequisites
-##BackEnd
+## BackEnd
 Java Eclipse IDE
 Maven
 Spring Boot
 Selenium
 SonarQube
 
-##Front-end
+## Front-end
 Visual Studio Code
 
 ### Installing
