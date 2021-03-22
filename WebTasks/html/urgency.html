@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Urgency List</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <ul class="nav justify-content-center">
+            <li class="nav-item">
+                <a class="nav-link" href="home.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="tasks.html">Tasks</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="urgency.html">Task List</a>
+            </li>
+        </ul>
+    </nav>
+
+    <h1 class="big-header">How do you want to use the Task Lists?</h1>
+    <p class="text">
+        Use the buttons below to help you choose what you want to do!
+    </p>
+
+    <div class="card">
+        <div class="card-body">
+            <div class="get">
+                <h3 class="headers">Get Task Lists</h3>
+                <button type="button" class="btn btn-outline-light" id="getButton" onclick="getUrgency()">
+                    Show all lists
+                </button>
+
+                <div class="card" style="margin: 2vw 2vh;">
+                    <div class="card-body">
+                        <p class="getData">
+
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <div class="post">
+                <h3 class="headers">Create a Task List</h3>
+
+                <form>
+                    <div class="mb-3">
+                        <label for="urgencyname" class="form-label" style="color: white;">Task list name</label>
+                        <input type="text" class="form-control" name="urgencyname" id="urgencyname" />
+                    </div>
+                </form>
+
+                <button type="submit" class="btn btn-outline-light" id="newUrgency" onclick="postUrgency()">
+                    Create a new Task list
+                </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <div class="update">
+                <h3 class="headers">Update a Task List</h3>
+
+                <div class="mb-3">
+                    <label for="updateList" class="form-label" style="color: white;">Enter the ID of the task list
+                        you want to enter</label>
+                    <input type="number" class="form-control" name="updateList" id="updateList">
+                </div>
+
+                <div class="mb-3">
+                    <label for="listName" class="form-label" style="color: white;">Enter the new name for the list</label>
+                    <input type="text" class="form-control" name="listName" id="listName">
+                </div>
+                <button type="button" class="btn btn-outline-light" id="updateButton" onclick="updateUrgency()">
+                    Update a Task List
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <div class="delete">
+                <h3 class="headers">Delete a Task List</h3>
+
+                <div class="mb-3">
+                    <label for="tList" class="form-label" style="color: white;">Task list ID</label>
+                    <input type="number" class="form-control" name="deleteList" id="deleteList" />
+                </div>
+
+                <button type="button" class="btn btn-outline-light" id="deleteBtn" onclick="deleteUrgency()">
+                    Delete a Task List
+                </button>
+
+            </div>
+        </div>
+    </div>
+
+
+    <script src="/js/urgency.js"></script>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
