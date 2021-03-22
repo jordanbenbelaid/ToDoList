@@ -30,71 +30,63 @@ public class UrgencyUserTest {
 	private static ExtentReports report;
 	private static ExtentTest test;
 	
-	@BeforeClass
-	public static void init() {
-		//new ExtentReport("location", override/replace existing)
-		report = new ExtentReports("src/test/java/seleniumTests/reports", true);
-		//create new test 'name'
-		test = report.startTest("Demo");
-		
-		//identifies which driver we are using
-		System.setProperty("webdriver.chrome.driver", "src/test/java/seleniumTests/drivers/chromedriver.exe");
-
-		ChromeOptions fOptions = new ChromeOptions();
-		//sets our driver window headless
-		fOptions.setHeadless(false);
+//	@BeforeClass
+//	public static void init() {
+//		//new ExtentReport("location", override/replace existing)
+//		report = new ExtentReports("src/test/java/seleniumTests/reports", true);
+//		//create new test 'name'
+//		test = report.startTest("Demo");
+//		
+//		//identifies which driver we are using
+//		System.setProperty("webdriver.chrome.driver", "src/test/java/seleniumTests/drivers/chromedriver.exe");
+//
+//		ChromeOptions fOptions = new ChromeOptions();
+//		//sets our driver window headless
+//		fOptions.setHeadless(false);
 		
 //		//configuration for cookie managements, where 2/true is on
 //		fOptions.setCapability("profile.default_content_setting_values.cookies", 2);
 //		fOptions.setCapability("network.cookie.cookieBehavior", 2);
 //		fOptions.setCapability("profile.block_third_party_cookies", true);
 		
-		driver = new ChromeDriver(fOptions);
-		driver.manage().window().setSize(new Dimension(1920, 1080));
-	}
-	
-	@Before
-	public void foundation() {
-		driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
-		driver.get(URL + "/urgency");
-	}
-	
-	@Test
-	public void ReadUrgencyTest() {	
-		
-//		UrgencyPage nav = PageFactory.initElements(driver, UrgencyPage.class);
-//		UrgencyPage list = PageFactory.initElements(driver, UrgencyPage.class);
+//		driver = new ChromeDriver(fOptions);
+//		driver.manage().window().setSize(new Dimension(1920, 1080));
+//	}
+//	
+//	@Before
+//	public void foundation() {
+//		driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
+//		driver.get(URL + "/urgency");
+//	}
+//	
+//	@Test
+//	public void ReadUrgencyTest() {	
 //		
-//		list.sendKeys("List");
-//		nav.createUrgencyButton();
+//		WebElement results = new WebDriverWait(driver, 5)
+//				.until(ExpectedConditions.presenceOfElementLocated(By.id("getUrgency")));
 //		
-//		assertEquals(true, driver.getPageSource().contains("List"));
-		
-		WebElement results = new WebDriverWait(driver, 5)
-				.until(ExpectedConditions.presenceOfElementLocated(By.id("getUrgency")));
-		
-		WebElement getButton = driver.findElement(By.id("getUrgency"));
-		
-		getButton.click();
-		
-		assertEquals(true, driver.getPageSource().contains(""));
-		
-	}
+//		WebElement getButton = driver.findElement(By.id("getUrgency"));
+//		
+//		getButton.click();
+//		
+//		assertEquals(true, driver.getPageSource().contains(""));
+//		
+//	}
 	
-	@AfterClass
-	public static void TearDown() {
-		driver.quit();
-		
-		//lets report know test has been completed
-		report.endTest(test);
-		//sends to report 
-		report.flush();
-		//close down
-		report.close();
-	}
-	
-	@After
-	public void CloseDown() {
-		driver.close();
-	}
+//	@AfterClass
+//	public static void TearDown() {
+//		driver.quit();
+//		
+//		//lets report know test has been completed
+//		report.endTest(test);
+//		//sends to report 
+//		report.flush();
+//		//close down
+//		report.close();
+//	}
+//	
+//	@After
+//	public void CloseDown() {
+//		driver.close();
+//	}
 }
