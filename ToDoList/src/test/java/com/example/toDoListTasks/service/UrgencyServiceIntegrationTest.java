@@ -63,14 +63,14 @@ public class UrgencyServiceIntegrationTest {
 	}
 	
 	@Test
-	public void readAllUrgencyTest() {
+	void readAllUrgencyTest() {
 		List<UrgencyDTO> urgencyToTest = urgencyService.readAllUrgency();
 		//returns wrong order for some reason
 		assertThat(urgencyDTOs).isEqualTo(urgencyToTest);
 	}
 	
 	@Test
-	public void createUrgencyTest() {
+	void createUrgencyTest() {
 		Urgency newUrgency = new Urgency("long list");
 		UrgencyDTO expectedUrgencyDTO = urgencyMapper.mapToUrgencyDTO(newUrgency);
 		
@@ -81,7 +81,7 @@ public class UrgencyServiceIntegrationTest {
 	}
 	
 	@Test
-	public void updateUrgencyTest() {
+	void updateUrgencyTest() {
 		Urgency updatedUrgency = new Urgency(validUrgency.getId(), "updated list");
 		UrgencyDTO result = urgencyService.updateUrgency(validUrgency.getId(), updatedUrgency);
 		
@@ -94,7 +94,7 @@ public class UrgencyServiceIntegrationTest {
 	}
 	
 	@Test
-	public void deleteUrgencyTest() {
+	void deleteUrgencyTest() {
 		assertThat(urgencyService.deleteUrgency(validUrgency.getId())).isEqualTo(true);
 	}
 	

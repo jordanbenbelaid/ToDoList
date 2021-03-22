@@ -15,12 +15,12 @@ import nl.jqno.equalsverifier.EqualsVerifier;
 public class TaskDtoUnitTest {
 
 	@Test
-	public void taskDtoEqualsTest() {
+	void taskDtoEqualsTest() {
 		EqualsVerifier.simple().forClass(TaskDTO.class).verify();
 	}
 	
 	@Test
-	public void toStringTest() {
+	void toStringTest() {
 		TaskDTO task = new TaskDTO();
 		
 		String result = task.toString();
@@ -31,7 +31,7 @@ public class TaskDtoUnitTest {
 	}
 	
 	@Test
-	public void taskDtoAllArgsConstructorTest() {
+	void taskDtoAllArgsConstructorTest() {
 		TaskDTO task = new TaskDTO(1, "Run", "10", "hard", "I go for a run");
 
 		assertNotNull(task.getId());
@@ -48,7 +48,7 @@ public class TaskDtoUnitTest {
 	}
 	
 	@Test
-	public void setTaskDtoTest() {
+	void setTaskDtoTest() {
 		TaskDTO task = new TaskDTO();
 		
 		task.setId(1);

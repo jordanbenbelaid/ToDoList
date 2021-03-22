@@ -60,7 +60,7 @@ public class UrgencyServiceUnitTesting {
 	}
 	
 	@Test
-	public void readAllUrgencyTest() {
+	void readAllUrgencyTest() {
 		when(urgencyRepo.findAll()).thenReturn(urgencies);
 		when(urgencyMapper.mapToUrgencyDTO(Mockito.any(Urgency.class))).thenReturn(validUrgencyDTO);
 		
@@ -71,7 +71,7 @@ public class UrgencyServiceUnitTesting {
 	}
 	
 	@Test
-	public void createUrgencyTest() {
+	void createUrgencyTest() {
 		when(urgencyRepo.save(Mockito.any(Urgency.class))).thenReturn(validUrgency);
 		when(urgencyMapper.mapToUrgencyDTO(Mockito.any(Urgency.class))).thenReturn(validUrgencyDTO);
 		
@@ -82,7 +82,7 @@ public class UrgencyServiceUnitTesting {
 	}
 	
 	@Test
-	public void updateUrgencyTest() {
+	void updateUrgencyTest() {
 		Urgency updatedUrgency = new Urgency(1, "List");
 		UrgencyDTO updatedUrgencyDTO = new UrgencyDTO(1, "List", new ArrayList());
 		
@@ -98,7 +98,7 @@ public class UrgencyServiceUnitTesting {
 	}
 	
 	@Test
-	public void deleteUrgencyTest() {
+	void deleteUrgencyTest() {
 		when(urgencyRepo.existsById(Mockito.any(Integer.class))).thenReturn(true).thenReturn(false);
 		
 		assertThat(true).isEqualTo(urgencyService.deleteUrgency(1));

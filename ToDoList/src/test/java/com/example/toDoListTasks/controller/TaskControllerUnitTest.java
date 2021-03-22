@@ -52,7 +52,7 @@ public class TaskControllerUnitTest {
 	}
 
 	@Test
-	public void readAllTasksTest() {
+	void readAllTasksTest() {
 		when(taskService.readAllTasks()).thenReturn(taskDTOs);
 
 		HttpHeaders headers = new HttpHeaders();
@@ -66,7 +66,7 @@ public class TaskControllerUnitTest {
 	}
 
 	@Test
-	public void createTaskTest() {
+	void createTaskTest() {
 		when(taskService.createTask(validTask)).thenReturn(validTaskDTO);
 
 		HttpHeaders headers = new HttpHeaders();
@@ -80,7 +80,7 @@ public class TaskControllerUnitTest {
 	}
 	
 	@Test
-	public void updateTaskTest() {
+	void updateTaskTest() {
 		when(taskService.updateTask(validTask.getId(), validTask)).thenReturn(validTaskDTO);
 		
 		HttpHeaders headers = new HttpHeaders();
@@ -94,7 +94,7 @@ public class TaskControllerUnitTest {
 	}
 	
 	@Test
-	public void deleteTaskTest() {
+	void deleteTaskTest() {
 		when(taskService.deleteTask(validTask.getId())).thenReturn(true);
 		
 		ResponseEntity<Boolean> response = new ResponseEntity<Boolean>(true, HttpStatus.OK);

@@ -56,7 +56,7 @@ public class TaskServiceUnitTesting {
 	}
 	
 	@Test
-	public void readAllTasksTest() {
+	void readAllTasksTest() {
 		//when specific method is called, we specify what to return
 		when(taskRepo.findAll()).thenReturn(tasks);
 		when(taskMapper.mapToTaskDTO(validTask)).thenReturn(validTaskDTO);
@@ -68,7 +68,7 @@ public class TaskServiceUnitTesting {
 	}
 	
 	@Test
-	public void createTaskTest() {
+	void createTaskTest() {
 		when(taskRepo.save(validTask)).thenReturn(validTask);
 		when(taskMapper.mapToTaskDTO(validTask)).thenReturn(validTaskDTO);
 		
@@ -79,7 +79,7 @@ public class TaskServiceUnitTesting {
 	}
 	
 	@Test
-	public void updateTaskTest() {
+	void updateTaskTest() {
 		Urgency urgency = new Urgency();
 		Task updatedTask = new Task(1, "Run", "10", "hard", "I go for a run", urgency);
 		TaskDTO updatedTaskDTO = new TaskDTO(1, "Run", "10", "hard", "I go for a run");
@@ -96,7 +96,7 @@ public class TaskServiceUnitTesting {
 	}
 	
 	@Test
-	public void deleteTaskTest() {
+	void deleteTaskTest() {
 		when(taskRepo.existsById(Mockito.any(Integer.class))).thenReturn(true).thenReturn(false);
 		
 		assertThat(true).isEqualTo(taskService.deleteTask(1));

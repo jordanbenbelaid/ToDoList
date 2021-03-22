@@ -52,14 +52,14 @@ public class TaskServiceIntegrationTesting {
 	}
 	
 	@Test
-	public void readAllTasksTest() {
+	void readAllTasksTest() {
 		List<TaskDTO> tasksInDb = taskService.readAllTasks();
 		
 		assertThat(taskDTOs).isEqualTo(tasksInDb);
 	}
 	
 	@Test
-	public void createTaskTest() {
+	void createTaskTest() {
 		Task newTask = new Task("Hide", "9", "easy", "I am Hiding");
 		TaskDTO expectedTaskDTO = taskMapper.mapToTaskDTO(newTask);
 		
@@ -70,7 +70,7 @@ public class TaskServiceIntegrationTesting {
 	}
 	
 	@Test
-	public void updateTaskTest() {
+	void updateTaskTest() {
 		Task updatedTask = new Task(validTask.getId(), "hard", "5", "Run", "I run");
 		TaskDTO result = taskService.updateTask(validTask.getId(), updatedTask);
 		
@@ -80,7 +80,7 @@ public class TaskServiceIntegrationTesting {
 	}
 	
 	@Test
-	public void deleteTaskTest() {
+	void deleteTaskTest() {
 		assertThat(taskService.deleteTask(validTask.getId())).isEqualTo(true);
 	}
 	

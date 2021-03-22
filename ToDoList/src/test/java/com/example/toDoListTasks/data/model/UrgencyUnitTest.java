@@ -15,20 +15,20 @@ import nl.jqno.equalsverifier.EqualsVerifier;
 public class UrgencyUnitTest {
 
 	@Test
-	public void urgencyEqualsTest() {
+	void urgencyEqualsTest() {
 		EqualsVerifier.simple().forClass(Urgency.class)
 				.withPrefabValues(Task.class, new Task("hard", "10", "Run", "I go for a run"), new Task()).verify();
 	}
 
 	@Test
-	public void urgencyDefaultConstructorTest() {
+	void urgencyDefaultConstructorTest() {
 		Urgency urgency = new Urgency();
 
 		assertNotNull(urgency);
 	}
 
 	@Test
-	public void toStringTest() {
+	void toStringTest() {
 		Urgency urgency = new Urgency();
 
 		String result = urgency.toString();
@@ -38,7 +38,7 @@ public class UrgencyUnitTest {
 	}
 
 	@Test
-	public void urgencyAllArgsConstructorTest() {
+	void urgencyAllArgsConstructorTest() {
 		Urgency urgency = new Urgency();
 
 		urgency.setId(1);
@@ -55,7 +55,7 @@ public class UrgencyUnitTest {
 	}
 
 	@Test
-	public void urgencyNameConstructorTest() {
+	void urgencyNameConstructorTest() {
 		Urgency urgency = new Urgency("Name");
 
 		assertNotNull(urgency.getName());
@@ -64,7 +64,7 @@ public class UrgencyUnitTest {
 	}
 
 	@Test
-	public void urgencyIdNameConstructorTest() {
+	void urgencyIdNameConstructorTest() {
 		Urgency urgency = new Urgency(1, "Name");
 
 		assertNotNull(urgency.getId());

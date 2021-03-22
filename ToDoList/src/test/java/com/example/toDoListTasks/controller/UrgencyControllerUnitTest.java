@@ -54,7 +54,7 @@ public class UrgencyControllerUnitTest {
 	}
 
 	@Test
-	public void readAllUrgenciesTest() {
+	void readAllUrgenciesTest() {
 		when(urgencyService.readAllUrgency()).thenReturn(urgencyDTOs);
 
 		ResponseEntity<List<UrgencyDTO>> response = new ResponseEntity<List<UrgencyDTO>>(urgencyDTOs, HttpStatus.OK);
@@ -65,7 +65,7 @@ public class UrgencyControllerUnitTest {
 	}
 
 	@Test
-	public void createUrgencyTest() {
+	void createUrgencyTest() {
 		when(urgencyService.createUrgency(validUrgency)).thenReturn(validUrgencyDTO);
 
 		HttpHeaders headers = new HttpHeaders();
@@ -80,7 +80,7 @@ public class UrgencyControllerUnitTest {
 	}
 
 	@Test
-	public void updateUrgencyTest() {
+	void updateUrgencyTest() {
 		when(urgencyService.updateUrgency(validUrgency.getId(), validUrgency)).thenReturn(validUrgencyDTO);
 
 		HttpHeaders headers = new HttpHeaders();
@@ -95,7 +95,7 @@ public class UrgencyControllerUnitTest {
 	}
 
 	@Test
-	public void deleteUrgencyTest() {
+	void deleteUrgencyTest() {
 	when(urgencyService.deleteUrgency(validUrgency.getId())).thenReturn(true);
 	
 	ResponseEntity<Boolean> response = new ResponseEntity<Boolean>(true, HttpStatus.OK);

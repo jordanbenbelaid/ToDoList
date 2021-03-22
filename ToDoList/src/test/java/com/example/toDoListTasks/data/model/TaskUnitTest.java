@@ -13,19 +13,19 @@ import nl.jqno.equalsverifier.EqualsVerifier;
 public class TaskUnitTest {
 
 	@Test
-	public void taskEqualsTest() {
+	void taskEqualsTest() {
 		EqualsVerifier.simple().forClass(Task.class).withPrefabValues(Urgency.class, new Urgency(), new Urgency("Urgent")).verify();
 	}
 
 	@Test
-	public void taskDefaultConstructorTest() {
+	void taskDefaultConstructorTest() {
 		Task task = new Task();
 
 		assertNotNull(task);
 	}
 	
 	@Test
-	public void toStringTest() {
+	void toStringTest() {
 		Task task = new Task();
 		Urgency urgency = new Urgency();
 		
@@ -39,7 +39,7 @@ public class TaskUnitTest {
 	}
 
 	@Test
-	public void taskAllArgsConstructorTest() {
+	void taskAllArgsConstructorTest() {
 		Urgency urgency = new Urgency();
 		Task task = new Task(1, "hard", "10", "Run", "I go for a run", urgency);
 
@@ -59,7 +59,7 @@ public class TaskUnitTest {
 	}
 
 	@Test
-	public void taskFiveArgsConstructor() {
+	void taskFiveArgsConstructor() {
 		Task task = new Task(1, "hard", "10", "Run", "I go for a run");
 
 		assertNotNull(task.getId());
@@ -76,7 +76,7 @@ public class TaskUnitTest {
 	}
 
 	@Test
-	public void taskNoIdArgConstructor() {
+	void taskNoIdArgConstructor() {
 		Task task = new Task("hard", "10", "Run", "I go for a run");
 
 		assertNotNull(task.getDifficulty());
@@ -91,7 +91,7 @@ public class TaskUnitTest {
 	}
 	
 	@Test
-	public void taskSetTest() {
+	void taskSetTest() {
 		Task task = new Task();
 		Urgency urgency = new Urgency();
 		
