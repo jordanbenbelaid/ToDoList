@@ -9,13 +9,15 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-import com.example.toDoListTasks.seleniumTests.pages.UrgencyPage;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 
@@ -31,12 +33,12 @@ public class UrgencyUserTest {
 	@BeforeClass
 	public static void init() {
 		//new ExtentReport("location", override/replace existing)
-		report = new ExtentReports("src/test/java/reports", true);
+		report = new ExtentReports("src/test/java/seleniumTests/reports", true);
 		//create new test 'name'
 		test = report.startTest("Demo");
 		
 		//identifies which driver we are using
-		System.setProperty("webdriver.chrome.driver", "src/test/java/drivers/chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "src/test/java/seleniumTests/drivers/chromedriver.exe");
 
 		ChromeOptions fOptions = new ChromeOptions();
 		//sets our driver window headless
@@ -57,18 +59,27 @@ public class UrgencyUserTest {
 		driver.get(URL + "/urgency");
 	}
 	
-//	@Test
-//	public void CreateUrgencyTest() {	
-//		
+	@Test
+	public void ReadUrgencyTest() {	
+		
 //		UrgencyPage nav = PageFactory.initElements(driver, UrgencyPage.class);
 //		UrgencyPage list = PageFactory.initElements(driver, UrgencyPage.class);
 //		
+//		list.sendKeys("List");
 //		nav.createUrgencyButton();
 //		
-//		list.sendKeys("List");
-//		
 //		assertEquals(true, driver.getPageSource().contains("List"));
-//	}
+		
+		WebElement results = new WebDriverWait(driver, 5)
+				.until(ExpectedConditions.presenceOfElementLocated(By.id("getUrgency")));
+		
+		WebElement getButton = driver.findElement(By.id("getUrgency"));
+		
+		getButton.click();
+		
+		assertEquals(true, driver.getPageSource().contains(""));
+		
+	}
 	
 	@AfterClass
 	public static void TearDown() {
