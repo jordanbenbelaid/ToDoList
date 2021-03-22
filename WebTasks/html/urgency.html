@@ -35,7 +35,7 @@
         <div class="card-body">
             <div class="get">
                 <h3 class="headers">Get Task Lists</h3>
-                <button type="button" class="btn btn-outline-light" onclick="getUrgency()">
+                <button type="button" class="btn btn-outline-light" id="getButton" onclick="getUrgency()">
                     Show all lists
                 </button>
 
@@ -86,7 +86,7 @@
                     <label for="listName" class="form-label" style="color: white;">Enter the new name for the list</label>
                     <input type="text" class="form-control" name="listName" id="listName">
                 </div>
-                <button type="button" class="btn btn-outline-light" onclick="updateUrgency()">
+                <button type="button" class="btn btn-outline-light" id="updateButton" onclick="updateUrgency()">
                     Update a Task List
                 </button>
             </div>
@@ -99,11 +99,11 @@
                 <h3 class="headers">Delete a Task List</h3>
 
                 <div class="mb-3">
-                    <label for="tList" class="form-label" style="color: white;">Task list name</label>
+                    <label for="tList" class="form-label" style="color: white;">Task list ID</label>
                     <input type="number" class="form-control" name="deleteList" id="deleteList" />
                 </div>
 
-                <button type="button" class="btn btn-outline-light" onclick="deleteUrgency()">
+                <button type="button" class="btn btn-outline-light" id="deleteBtn" onclick="deleteUrgency()">
                     Delete a Task List
                 </button>
 
